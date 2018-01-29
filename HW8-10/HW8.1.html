@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Использование cookies</title>
+
+    <script>
+        window.addEventListener("load", function () {
+
+            var savedColor = findCookieValue("page-color");
+            if (savedColor) {
+                document.body.style.backgroundColor = savedColor;
+            }
+
+            var savedSize = findCookieValue("fontSize");
+            if (savedSize) {
+                document.body.style.fontSize = savedSize + "px";
+            }
+
+            document.getElementById("saveButton").addEventListener("click", function () {
+                var selectedColor = getCheckedSelectId("color");
+                var selectedSize = parseFloat(a.value);
+                document.cookie = "page-color=" + encodeURIComponent(selectedColor) + "; max-age=" + (60 * 60);
+                document.cookie ="fontSize=" + encodeURIComponent(selectedSize) + "; max-age=" + (60 * 60);
+                document.body.style.backgroundColor = selectedColor;
+                document.body.style.fontSize = selectedSize + "px";
+            });
+
+            function getCheckedSelectId(name) {
+                var elements = document.getElementsByName(name)[0];
+                return elements.value; 
+            }
+
+            function findCookieValue(cookieName) {
+                var allcookies = document.cookie;
+                var pos = allcookies.indexOf(cookieName + "=");
+
+                if (pos != -1) {
+                    var start = pos + cookieName.length + 1;
+                    var end = allcookies.indexOf(";", start);
+
+                    if (end == -1) end = allcookies.length;
+
+                    var value = allcookies.substring(start, end);
+                    value = decodeURIComponent(value);
+                    return value;
+                }
+            }
+
+            var a = document.getElementsByName('size')[0];
+            var pattern = /\d/;
+            // Проверка введенных данных пользователем
+            a.addEventListener('keypress', function (e) {
+                var str = String.fromCharCode(e.charCode);
+                if (!pattern.test(str)) {
+                    e.preventDefault();
+                }
+            })
+        });
+    </script>
+
+</head>
+<body>
+    <form>
+        <select id="color" name="color">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue" >Blue</option>
+            <option value="grey">Grey</option>
+            <option value="lime">Lime</option>
+
+        </select>
+        <input type="text" name="size"  />
+        <input id="saveButton" type="button" value="Сохранить" />
+    </form>
+    esdrftghjkl;kjhytredtfyuijokokjihuytrdtyujikokji
+</body>
+</html>

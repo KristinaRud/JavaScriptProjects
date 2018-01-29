@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="StyleSheet02.css" rel="stylesheet" />
+    <script type="text/javascript">
+        window.onload = function () {
+            var but = document.getElementById("but");
+            var span1 = document.getElementById("p1");
+            var span2 = document.getElementById("p2");
+            span1.style.display = "none";
+            span2.style.display = "none";
+
+            but.onclick = function () {
+
+                var log = document.getElementById("log");
+                var pass = document.getElementById("pass");
+                
+                
+                if (log.value != "" && pass.value != "") {
+                    log.style.backgroundColor = "green";
+                    pass.style.backgroundColor = "green";
+                    if (log.value == "admin" && pass.value == "12345") {
+                        span1.style.display = "none";
+                        span2.style.display = "block";
+                        
+                    } else {
+                        
+                        span1.style.display = "none";
+                        span2.style.display = "none";
+                    }
+                }
+                else if (log.value != "" && pass.value == "") {
+                    log.style.backgroundColor = "green";
+                    pass.style.backgroundColor = "red";
+                    span1.style.display = "block";
+                    span2.style.display = "none";
+
+                }
+                else if (pass.value != "" && log.value == "") {
+                    log.style.backgroundColor = "red";
+                    pass.style.backgroundColor = "green";
+                    span1.style.display = "block";
+                    span2.style.display = "none";
+                } else {
+                    log.style.backgroundColor = "red";
+                    pass.style.backgroundColor = "red";
+                    span1.style.display = "block";
+                    span2.style.display = "none";
+                   
+                }
+            }
+            
+
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+        <form>
+            <table>
+                <tr>
+                    <td>Login:</td>
+                    <td><input type="text" id="log" /></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="text" id="pass" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" />&nbsp;Запомнить меня</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         <input type="button" value="Войти" id="but" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <span id="p1">Вы не заполнили поля логин и парол</span>
+        <span id="p2">Вы авторизованы!</span>
+    </div>
+</body>
+</html>

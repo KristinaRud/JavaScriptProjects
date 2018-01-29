@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        if (window.addEventListener) window.addEventListener("load", init, false);
+
+        function init() {
+            //form1.passwordTwo.addEventListener("change", valueCompare)
+            form1.passwordTwo.onchange = valueCompare;
+            form1.onsubmit = onsubmiHandler;
+            
+        }
+
+        function valueCompare(e) {
+            var p1 = document.form1.passwordFirst;
+            var p2 = document.form1.passwordTwo;
+            var error = document.getElementById('error');
+            if (p1.value !== p2.value) {
+                p2.className = "invalid";
+                p1.className = "invalid";
+                error.style.display = 'block';
+            }
+            else if (p1.value == "" && p2.value == "") {
+                p2.className = "";
+                p1.className = "";
+                error.style.display = 'none';
+            }
+            else {
+                p2.className = "valid";
+                p1.className = "valid";
+                error.style.display = 'none';
+            }
+            
+        }
+
+        function onsubmiHandler(e) {
+            if (p1.value !== p2.value) {
+                e.preventDefault();
+            }
+        }
+
+    </script>
+    <style type="text/css">
+        input.invalid {
+            background-color: Pink;
+        }
+
+        input.valid {
+            background-color: LightGreen;
+        }
+        span {
+            display: none;
+            color: red;
+            position: absolute;
+            left:305px;
+            top:97px;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1">
+        Name
+        <!-- required="required" - поле обязательно для заполнения -->
+        <input type="text" name="name" required="required" />
+        <br />
+
+        Second Name
+        <!-- required="required" - поле обязательно для заполнения -->
+        <input type="text" name="sName" required="required" />
+        <br />
+
+        Login
+        <!-- required="required" - поле обязательно для заполнения -->
+        <input type="text" name="login" required="required" />
+        <br />
+
+        Password
+        <input type="password" name="passwordFirst" required="required" id="p1" value="" /><br />
+        PasswordElseOnce
+        <input type="password" name="passwordTwo" required="required" id="p2" value="" /><span id="error">Пароли не совпадают!</span><br />
+
+        Email
+        <!-- type="email" - поле должно содержать данные в формате email адреса -->
+        <input type="email" name="emailAddress" value="" pattern="\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b" title="Формат email G_hgjhgj5@gmail.com" /><br />
+
+        Gender<br />
+        <input type="radio" name="r" />Man
+        <input type="radio" name="r" />Woman<br />
+
+
+        <input type="submit" />
+    </form>
+</body>
+</html>

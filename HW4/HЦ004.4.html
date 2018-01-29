@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="StyleSheet04.css" rel="stylesheet" type="text/css" />
+    <script>
+        window.onload = function () {
+            var div = document.getElementsByTagName("div");
+            // счетчик
+            var count = 0;
+
+            document.getElementsByTagName("input")[0].onclick = function () {
+                //проверка дошел ли счетчик до последнего div
+                if (count > 4) {
+                    count = 0;
+                    //меняем цвет последнего элемента на зеленый
+                    div[4].style.backgroundColor = "green";
+                }
+
+                for (var i = 0; i < div.length; i++) {
+                    div[i].style.backgroundColor = "green";
+                }
+
+                div[count].style.backgroundColor = "red";
+                //увеличиваем счетчик на 1
+                count++;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <input type="button" value="GO" />
+</body>
+</html>

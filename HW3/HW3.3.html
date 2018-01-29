@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onload = function () {
+            document.getElementById("input").onblur = function () {
+                var str = document.getElementById("input").value;
+                var oper = str.match(/[+\-/*]/g);
+                //var oper = str.split(/[^+\-/*]/g);
+                var numbArr = str.split(/\D+/g);
+                document.getElementById("output").innerHTML = Action(numbArr, oper);
+            }
+            var Action = function (numb, oper) {
+                var a = parseFloat(numb[0]);
+                var b = parseFloat(numb[1]);
+                var operation = oper[0];
+                //var operation = oper[2];
+                switch (operation) {
+                    case "+": return a + b; break;
+                    case "-": return a - b; break;
+                    case "*": return a * b; break;
+                    case "/":
+                        if (b != 0) {
+                            return a / b;
+                        } else { return "На ноль делить нельзя!";}
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="input">
+    <p id="output"></p>
+</body>
+</html>

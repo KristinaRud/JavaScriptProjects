@@ -1,0 +1,9 @@
+﻿body {
+}
+div {
+    width: 100px;
+    height: 100px;
+    float: left;
+    background-color: green;
+    margin: 5px;
+}

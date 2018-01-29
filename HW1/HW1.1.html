@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Animals(name) {
+            //свойство экземпляра
+            this.name = name;
+        }
+
+        //метод экземпляра
+        Animals.prototype.RotateAroundMyself = function () {
+            document.write(this.name + "__кружится вокруг себя" + "<br/>");
+        }
+
+        //cвойство функции-конструктор
+        Animals.MinHeight = 10;
+
+        //метод функции-конструктора
+        Animals.getNameInform = function () {
+            document.write("min рост__" + Animals.MinHeight + "<br/>");
+            return new Animals("Котик");
+        }
+
+        var Dog = new Animals("Собачка");
+
+        Dog.RotateAroundMyself();
+        Animals.getNameInform().RotateAroundMyself();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

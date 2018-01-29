@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.addEventListener('load', function (e) {
+            var countStart= 40;
+            var countEnd = 500;
+            var timer;
+            e.target.addEventListener('click', function (e) {
+                if (countStart > countEnd) {
+                    timer = setInterval(function () {
+                        countStart = 40;
+                        e.target.style.height = countEnd + 'px';
+                        countEnd--;
+                        if (e.target.style.height === '40px') {
+                            clearInterval(timer);
+                            countEnd = 500;
+                        }
+                    }, 5)
+                }
+                else {
+                    timer = setInterval(function () {
+                        e.target.style.height = countStart + 'px';
+                        countStart++;
+                        if (e.target.style.height === '500px') {
+                            clearInterval(timer);
+                        }
+                    }, 5)
+                }
+            })
+        })
+    </script>
+    <style>
+        img{
+            height:40px;
+            width:auto;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="http://katyaburg.ru/sites/default/files/pictures/krasota_prirody/gorniy_peyzag_skaly_snegnye_piki_foto_01.jpg" />
+    <img src="https://assets.prophotos.ru/data/articles/0001/7485/112632/original.jpg"  />
+    <img src="http://www.marmorata.it/wp-content/uploads/2016/03/CONTESTO-1030x687.jpg"  />
+</body>
+</html>

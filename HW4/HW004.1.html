@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onload = function () {
+            document.getElementById("but").onclick = function () {
+                var valueIn = parseInt(document.getElementById("input").value);
+                var div = document.getElementById("div1");
+                var ranNumb = Random(0, 100);
+                if (valueIn < ranNumb) {
+                    div.style.backgroundColor = "red";
+                    div.style.fontColor = "black";
+                    div.style.fontSize = "22pt";
+                    div.innerHTML = "загаданное значение больше введенного вами";
+                }
+                else if (valueIn > ranNumb) {
+                    div.style.backgroundColor = "yellow";
+                    div.style.fontColor = "black";
+                    div.style.fontSize = "22pt";
+                    div.innerHTML = "загаданное значение меньше введенного вами";
+                }
+                else {
+                    div.style.backgroundColor = "green";
+                    div.style.fontColor = "black";
+                    div.style.fontSize = "22pt";
+                    div.innerHTML = "Вы угадали";
+                }
+            }
+            //создаем функцию Random
+            var Random = function (min, max) {
+                var rand = min - 0.5 + Math.random() * (max - min + 1)
+                rand = Math.round(rand);
+                return rand;
+            }
+        }
+    </script>
+    <style>
+        #div1 {
+            width: 500px;
+            position:absolute;
+            top:200px;
+            left:100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input" />
+    <input type="button" id="but" value="Run" />
+    <div id="div1"></div>
+</body>
+</html>

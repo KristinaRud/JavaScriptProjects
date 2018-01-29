@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var Module = {};
+        Module.createHandler = function (element, event, hadnler, capture) {
+            if (window.addEventListener) {
+                element.addEventListener(event, hadnler, capture);
+            }
+            else if (window.attachEvent) {
+                element.attachEvent('on' + event, hadnler);
+            }
+
+        }
+        //create
+        Module.createHandler(window, 'load', hadnlerHelloWorld, false);
+        function hadnlerHelloWorld() {
+            document.write("Hello World");
+            alert("Hello World");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        (function () {
+            window.addEventListener("load", init, false);
+
+            function init() {
+                var but = document.getElementById("but");
+                but.addEventListener("mousemove", function (e) {
+                    drag(this, e);
+                })
+            }
+
+            function drag(elementToDrag, event) {
+                // координаты мыши в начале перетаскивания.
+                var startX = event.clientX,
+                    startY = event.clientY;
+                elementToDrag.style.position = 'absolute';
+                elementToDrag.style.top = startY + 20 + 'px';
+                elementToDrag.style.left = startY + 20 + 'px';
+
+
+                
+                
+            }
+        })()
+    </script>
+</head>
+<body>
+    <input type="button" value="Получить скидку" id="but"/>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onload = function () {
+            var p = document.getElementById("allP");
+            
+            p.onclick = function () {
+                
+                var p = document.createElement("p");
+                p.innerHTML = "New Pharagrah";
+                document.body.appendChild(p);
+                var par = document.body.getElementsByTagName("p");
+                
+
+                if (par.length == 10) {
+                    for (var i = 0; i < par.length; i++) {
+                        document.body.removeChild(par[i]);
+                        i--;
+                    } 
+                    
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" id="allP" value="Create new Pharagrah" />
+</body>
+</html>

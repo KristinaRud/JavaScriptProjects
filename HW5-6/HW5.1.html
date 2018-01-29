@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+        window.addEventListener("load", function () {
+
+            var plus = document.getElementById("plus");
+
+            plus.addEventListener("click", function () {
+
+                var a = document.getElementById("input1").value;
+                var b = document.getElementById("input2").value;
+                a = parseFloat(a);
+                b = parseFloat(b);
+                return alert(a + b);
+
+            }, false);
+            //
+            var minus = document.getElementById("minus");
+
+            minus.addEventListener("click", function () {
+                var a = document.getElementById("input1").value;
+                var b = document.getElementById("input2").value;
+                a = parseFloat(a);
+                b = parseFloat(b);
+                return alert(a - b);
+
+            }, false);
+            //
+
+            var mul = document.getElementById("mul");
+            mul.addEventListener("click", function () {
+                var a = document.getElementById("input1").value;
+                var b = document.getElementById("input2").value;
+                a = parseFloat(a);
+                b = parseFloat(b);
+                return alert(a * b);
+
+            }, false);
+            //
+            var div = document.getElementById("div");
+            div.addEventListener("click", function () {
+                var a = document.getElementById("input1").value;
+                var b = document.getElementById("input2").value;
+                a = parseFloat(a);
+                b = parseFloat(b);
+                if (b != 0) {
+                    return alert(a / b);
+                } else alert("На ноль делить нельзя!");
+
+            }, false);
+            
+            var pattern = /\d/;
+            var a = document.getElementById("input1");
+            var b = document.getElementById("input2");
+            a.addEventListener('keypress', function (e) {
+                var aCode = String.fromCharCode(e.charCode);
+                if (!pattern.test(aCode)) {
+                    e.preventDefault();
+                }
+            })
+            
+            b.addEventListener('keypress', function (e) {
+                var bCode = String.fromCharCode(e.charCode);
+                if (!pattern.test(bCode)) {
+                    e.preventDefault();
+                }
+            })
+
+        })
+
+
+
+
+    </script>
+</head>
+<body>
+    <input type="text" id="input1" />
+    <input type="text" id="input2" />
+    <input type="button" id="plus" value="+" />
+    <input type="button" id="minus" value="-" />
+    <input type="button" id="div" value="/" />
+    <input type="button" id="mul" value="*" />
+</body>
+</html> 

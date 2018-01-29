@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        function Human(name, age) {
+            this.Name = name;
+            this.Age = age;
+        }
+
+        //override ToString
+        Human.prototype.toString = function () {
+            return "Name: " + this.Name + "; Age: " + this.Age + ";" + "<br/>";
+        }
+
+        var Mary = new Human("Mary", 23);
+        var Harry = new Human("Hurry", 27);
+
+        document.write(Mary);
+        document.write(Harry);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

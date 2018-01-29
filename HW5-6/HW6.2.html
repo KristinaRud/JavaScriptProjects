@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.addEventListener("keydown", function (e) {
+            var div = document.getElementsByTagName("div");
+            if(e.keyCode == 82){
+                for (var i = 0; i < div.length; i++) {
+                    div[i].style.color = "red";
+                }
+            }
+            else if (e.keyCode == 71) {
+                for (var i = 0; i < div.length; i++) {
+                    div[i].style.color = "green";
+                }
+            }
+            else if (e.keyCode == 66) {
+                for (var i = 0; i < div.length; i++) {
+                    div[i].style.color = "blue";
+                }
+            }
+        })
+    </script>
+    <style>
+        div{
+            font-size:72pt;
+        }
+    </style>
+</head>
+<body>
+    <div>Red</div>
+    <div>Green</div>
+    <div>Blue</div>
+</body>
+</html>

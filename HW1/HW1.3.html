@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Human(name, age) {
+            this.Name = name;
+            this.Age = age;
+        }
+
+        //override ToString
+        Human.prototype.toString = function () {
+            return "Name: " + this.Name + "; Age: " + this.Age + "; Language:" + this.Language + "<br/>";
+        }
+        //метод Sleep
+        Human.prototype.Sleep = function () {
+            document.write(this.Name + " is sleeping" + "<br/>");
+        }
+        //метод Marries
+        Human.prototype.Marries = function (wife) {
+            document.write(this.Name + " married " + wife.Name + "<br/>");
+        }
+        // 
+        Human.lang = function (language) {
+            switch (language) {
+                case "C#":
+                    return "C#";
+                    break;
+                case "PHP":
+                    return "PHP";
+                    break;
+                case "JavaScript":
+                    return "JavaScript";
+                    break;
+                default:
+                    return "Undefine";
+            }
+        }
+
+        var Mary = new Human("Mary", 23);
+        var Harry = new Human("Hurry", 27);
+
+        Mary.Language = Human.lang("PHP");
+        Harry.Language = Human.lang("C#");
+
+        document.write(Mary);
+        document.write(Harry);
+
+        Mary.Sleep();
+        Harry.Marries(Mary);
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

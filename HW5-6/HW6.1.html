@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+  
+            var flag = false;
+            var text;
+            window.onload = function () {
+                var button = document.getElementById('but');
+                button.addEventListener('click', function () {
+                    flag = true;
+                })
+            }
+        //сработает перед закрытием браузера
+            window.onbeforeunload = function () {
+                text = document.getElementById('text').value.length; 
+                if (!flag && text != 0) {
+                    return 'Вы уверены, что хотите закрыть окно, не сохранившись?';
+                }
+            }
+        
+    </script>
+
+</head>
+<body>
+    <input id="text" type="text" />
+    <input type="button" value="Сохранить" id="but"/>
+</body>
+</html>
