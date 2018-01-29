@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var N = +prompt("Введите размерность массива");
+
+        var arr = new Array(N);
+//*********************************Заполнение массива числами*****************************************//
+
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = +prompt("Заполнение массива числами <br/> число с индексом " + i + "=");
+            //document.write("Вывод массива <br/>" + arr[i].join(",&nbsp;"));
+        }
+
+        document.write("Вывод массива <br/>" + arr.join(",&nbsp;"));
+        document.write("<hr/>");
+
+//**********************************Максимальное значение массива*******************************************//
+        var MaxArg = -Infinity;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > MaxArg) {
+                var MaxArg = arr[i];   
+            }
+        }
+        document.write("Максимальное значение массива <br/>" + MaxArg);
+        document.write("<hr/>");
+
+//*********************************Минимальное значение массива********************************************//
+        var MinArg = +Infinity;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] < MinArg) {
+                var MinArg = arr[i];
+            }
+        }
+        document.write("Минимальное значение массива <br/>" + MinArg);
+        document.write("<hr/>");
+
+//*********************************Сумма всех элементов массива********************************************//
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        document.write("Сумма всех элементов массива  <br/>" + sum);
+        document.write("<hr/>");
+
+//*****************************Среднее арифметическое всех элементов************************************************//
+        document.write("Среднее арифметическое всех элементов  <br/>" + sum / arr.length);
+        document.write("<hr/>");
+
+        //*********************************Вывод всех нечетных значений************************************************//
+        document.write("Вывод всех нечетных значений  <br/>");
+
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 != 0) {
+
+                document.write("&nbsp;" + arr[i] + "<br/>");
+            }
+
+            else { continue; }
+        }
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

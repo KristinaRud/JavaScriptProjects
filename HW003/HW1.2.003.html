@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var arr = new Array(5);
+
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = new Array(5);
+        }
+
+        //Инициализация массива
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < arr[i].length; j++) {
+                arr[i][j] = Math.random();
+                document.write("&nbsp;&nbsp;" + arr[i][j] + "&nbsp;&nbsp;");
+            }
+            document.write("<br/>");
+        }
+
+        document.write("<br/>");
+        document.write("<hr/>");
+        document.write("<br/>");
+         //Массив после манипуляций
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < arr[i].length; j++) {
+                if (i == j) {
+                    if (arr[i][j] < 0) {
+                        arr[i][j] = "0";
+                    }
+                    else {
+                        arr[i][j] = "1";
+                    }
+                }
+                document.write("&nbsp;&nbsp;" + arr[i][j] + "&nbsp;&nbsp;");
+            }
+            document.write("<br/>");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

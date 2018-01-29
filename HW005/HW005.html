@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var Document = {
+            title: "TITLE1",
+            body: "BODY1",
+            footer: "FOOT1",
+            data: "DATA1",
+
+            Application: {
+
+                title: "TITLE2",
+                body: "BODY2",
+                footer: "FOOT2",
+                data: "DATA2",
+            },
+
+            GetShow: function () {
+                document.write("Document" + "<br/>" + "Title:" + " " + this.title + "<br/>");
+                document.write("Body:" + " " + this.body + "<br/>");
+                document.write("Footer:" + " " + this.footer + "<br/>");
+                document.write("Data:" + " " + this.data + "<br/>" + "<hr/>");
+
+                document.write("Application" + "<br/>" + "Title:" + " " + this.Application.title + "<br/>");
+                document.write("Body:" + " " + this.Application.body + "<br/>");
+                document.write("Footer:" + " " + this.Application.footer + "<br/>");
+                document.write("Data:" + " " + this.Application.data + "<br/>" + "<hr/>");
+
+            },
+
+            SetChange: function () {
+                this.Application.title = prompt("Please, enter a title ");
+                this.Application.body = prompt("Please, enter a body ");
+                this.Application.footer = prompt("Please, enter a footer ");
+                this.Application.data = prompt("Please, enter a data ");
+
+            }
+        }
+        document.write("//////////Before the changes/////////"+"<br/>")
+        Document.GetShow();
+        document.write("//////////After the changes/////////" + "<br/>")
+        Document.SetChange();
+        Document.GetShow();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
