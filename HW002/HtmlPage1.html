@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var A = +prompt("Введите А=");
+        var B = +prompt("Введите В=");
+        var G = A;
+        
+        for (A; A < B; A++) {
+            document.write(A  + "<br/>");
+        }
+
+        document.write("<hr/>" + "<br/>");
+
+        var F = 0;
+
+        document.write("Непарные числа:" + "<br/>");
+
+        for (G; G < B; G++) {
+            if (F != G % 2) {
+                document.write(G + ";" + "&nbsp;")
+            }
+            else {
+                continue;
+            }
+        }
+       
+    </script>
+</head>
+<body>
+
+</body>
+</html>

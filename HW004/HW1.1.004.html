@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var oper = prompt("Введите операцию которую хотите осуществить с двумя числами ( +, -, /, * )");
+        var a = +prompt("Первое число =");
+        var b = +prompt("Второе число =");
+
+        switch (oper) {
+            case "+":
+                alert(Add(a, b));
+                break;
+            case "-":
+                alert(Sub(a, b));
+                break;
+            case "/":
+                alert(Div(a, b));
+                break;
+            case "*":
+                alert(Mul(a, b));
+                break;
+            default:
+                alert("ERROR!!!!!!!!!!!!!!!!!!!!!! НЕПРАВИЛЬНО ВВЕДЕНА ОПЕРАЦИЯ");
+        }
+
+        function Add(a, b) {
+            return a + b;
+        }
+
+        function Sub(a, b) {
+            return a - b;
+        }
+
+        function Mul(a, b) {
+            return a * b;
+        }
+
+        function Div(a, b) {
+            if (b == 0) {
+                alert("ERROR! НА НОЛЬ ДЕЛИТЬ НЕЛЬЗЯ");
+            }
+            return a / b;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

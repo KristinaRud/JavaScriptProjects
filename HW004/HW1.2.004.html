@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        
+        var b = +prompt("Введите число");
+        var res = Info(b);
+        //
+        if (res) {
+            document.write("Число простое" + " <br/><hr><br/>");
+        } else {
+            document.write("Число не простое" + "<br/><hr><br/>");
+        }
+        //
+        function Info(a) {
+            //
+            if (a < 0) {
+                document.write(a + "&nbsp;" + "есть число отрицательное" + "<br/><hr><br/>");
+            } else {
+                document.write(a + "&nbsp;" + "есть положительное отрицательное" + "<br/><hr><br/>");
+            }
+            //
+            if (a % 2 == 0 || a % 3 == 0 || a % 5 == 0 || a % 5 == 0 || a % 6 == 0 || a % 9 == 0){
+                document.write(a + "&nbsp;" + "число делится на 2 или 3 или 5 или 6 или 9 без остатка" + "<br/><hr><br/>");
+            }else {
+                document.write(a + "&nbsp;" + "число не делится на 2,3,5,6,9 без остатка" + "<br/><hr><br/>");
+            }
+            //
+            if (a == 1 || a < 0)
+                return false;
+            //
+            for (var i = 2; i * i <= a; i++) {
+             
+                if (a % i == 0)
+                    return false;
+            }
+            //
+            return true;
+        }
+
+       
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

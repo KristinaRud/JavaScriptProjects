@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        //квадрат
+
+        for (var i = 0; i < 10; i++) {
+            document.write("<br/>");
+            for (var j = 0; j < 10; j++) {
+                document.write(" &nbsp * &nbsp");
+            }
+        }
+        document.write("<hr/>");
+
+        //треугольник
+
+        for (var i1 = 0; i1 < 10; i1++) {
+            document.write("<br/>");
+            for (var j1 = 0; j1 < i1; j1++) {
+                document.write(" &nbsp * &nbsp");
+            }
+        }
+        document.write("<hr/>");
+
+        //равносторонник треугольник
+        
+        var x = 10;
+        var y = 10;
+        for (var i = 0; i < y; i++) {
+            for (var k = x - i - 1; k > 0; k--) {
+                document.write("&nbsp;");
+            }
+            for (var j = 0; j < (i + 1); j++) {
+                document.write(" * ");
+            }
+               
+                document.write(" <br/>");
+        }
+
+        document.write("<hr/>");
+
+        //ромб
+
+        var x = 10;
+        var y = 10;
+        for (var i = 0; i < y; i++) {
+            for (var k = x - i ; k > 0; k--) {
+                document.write("&nbsp;");
+            }
+            for (var j = 0; j < (i + 1); j++) {
+                document.write(" * ");
+            }
+
+            document.write(" <br/>");
+        }
+
+
+        var x = 10;
+        var y = 10;
+        var g = 0;
+        for (var i = 0; i < y; i++) { 
+            for (var k = i; k < i + g + 2; k++) {
+                document.write("&nbsp;");
+            }
+            
+            for (var j = 0; j < x - 1 - i; j++) {
+                document.write(" * ");
+            }
+            document.write("&nbsp;");
+            document.write(" <br/>");
+            g++;
+        }
+
+        document.write("<hr/>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

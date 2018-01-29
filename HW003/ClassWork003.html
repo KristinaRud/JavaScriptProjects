@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var N = +prompt("Введите размерность массива");
+
+        var arr = new Array(N);
+
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = +prompt("Заполнение массива числами <br/> число с индексом " + i + "=");
+            //document.write("Вывод массива <br/>" + arr[i].join(",&nbsp;"));
+        }
+
+        document.write("Вывод массива <br/>" + arr.join(",&nbsp;"));
+        document.write("<hr/>" );
+
+        arr.reverse();
+        document.write("Вывод массива в обратном порядке <br/>" + arr.join(",&nbsp;"));
+  
+    </script>
+</head>
+<body>
+
+</body>
+</html>
